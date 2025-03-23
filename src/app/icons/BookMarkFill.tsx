@@ -1,7 +1,7 @@
 import React from 'react';
 import type { SVGProps } from 'react';
 
-export function Home(props: SVGProps<SVGSVGElement>) {
+export function BookMarkFill(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -12,7 +12,7 @@ export function Home(props: SVGProps<SVGSVGElement>) {
     >
       <path
         fill='currentColor'
-        d='M6 19h3.692v-5.884h4.616V19H18v-9l-6-4.538L6 10zm-1 1V9.5l7-5.288L19 9.5V20h-5.692v-5.884h-2.616V20zm7-7.77'
+        d='M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1'
       ></path>
     </svg>
   );
