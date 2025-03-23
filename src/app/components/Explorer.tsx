@@ -1,5 +1,6 @@
 import { NavList } from '@/components/NavList';
 import { InakiDev } from '@/components/InakiDev';
+import { PostButton } from '@/components/PostButton';
 
 export function Explorer() {
   return (
@@ -9,9 +10,7 @@ export function Explorer() {
           <NavList />
         </nav>
 
-        <button className='bg-white rounded-full text-black px-4 py-2 flex items-center justify-center font-semibold text-xl cursor-pointer hover:bg-white/90'>
-          Post
-        </button>
+        <PostButton />
       </div>
 
       <InakiDev />
