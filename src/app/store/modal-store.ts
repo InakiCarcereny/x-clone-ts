@@ -7,7 +7,7 @@ interface ModalStore {
   closeModal: () => void;
 }
 
-type ModalType = 'post' | 'get-verified';
+type ModalType = 'post' | 'get-verified' | 'edit-profile';
 
 export const useModalStore = create<ModalStore>((set) => ({
   isOpen: false,
