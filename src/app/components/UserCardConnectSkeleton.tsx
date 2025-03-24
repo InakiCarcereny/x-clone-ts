@@ -1,4 +1,4 @@
-export function UserCardSkeleton() {
+export function UserCardConnectSkeleton() {
   return (
     <li className='flex items-center justify-between w-full animate-pulse'>
       <div className='flex items-center gap-x-2 w-full'>
@@ -7,6 +7,7 @@ export function UserCardSkeleton() {
         <div className='flex flex-col w-full gap-1'>
           <small className='w-3/4 h-4 bg-gray-300 rounded-md'></small>
           <span className='w-2/4 h-4 bg-gray-300 rounded-md'></span>
+          <p className='w-3/4 h-4 bg-gray-300 rounded-md'></p>
         </div>
       </div>
 
