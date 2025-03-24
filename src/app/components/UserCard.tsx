@@ -1,16 +1,24 @@
 import { User } from '@/types/users';
 import Image from 'next/image';
 
-type UserCardProps = Pick<User, 'lastName' | 'firstName' | 'username'>;
+type UserCardProps = Pick<
+  User,
+  'lastName' | 'firstName' | 'username' | 'image'
+>;
 
-export function UserCard({ lastName, firstName, username }: UserCardProps) {
+export function UserCard({
+  lastName,
+  firstName,
+  username,
+  image,
+}: UserCardProps) {
   return (
     <li className='flex items-center justify-between w-full'>
       <div className='flex items-center gap-x-2'>
         <Image
-          src={''}
-          width={54}
-          height={54}
+          src={image}
+          width={40}
+          height={40}
           alt={'user'}
           className='rounded-full'
         />
@@ -23,7 +31,7 @@ export function UserCard({ lastName, firstName, username }: UserCardProps) {
         </div>
       </div>
 
-      <button className='bg-white text-black font-semibold text-sm px-4 py-2 rounded-full'>
+      <button className='bg-white text-black font-semibold text-sm px-4 py-2 rounded-full cursor-pointer'>
         Follow
       </button>
     </li>
