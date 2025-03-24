@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { EditProfileButton } from '@/components/EditProfileButton';
 import { GetVerifiedButton } from '@/components/GetVerifiedButton';
 import { Balloon } from '@/icons/Balloon';
 import { Calendar } from '@/icons/Calendar';
@@ -31,9 +32,7 @@ export default function Profile() {
         className='rounded-full w-36 h-36 border-2 border-black absolute top-64 left-8 object-cover'
       />
 
-      <button className='absolute top-84 right-8 rounded-full text-white font-semibold border border-cyan-500 px-4 py-2 bg-transparent cursor-pointer'>
-        Edit profile
-      </button>
+      <EditProfileButton />
 
       <div className='flex flex-col gap-4 w-full px-4 py-2 mt-24'>
         <div className='flex flex-col'>
