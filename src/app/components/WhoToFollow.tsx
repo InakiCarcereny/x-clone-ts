@@ -1,7 +1,8 @@
 import { getUsers } from '@/services/users';
 import { Suspense } from 'react';
 import { UsersList } from '@/components/UsersList';
-import { UserCardSkeleton } from './UserCardSkeleton';
+import { UserCardSkeleton } from '@/components/UserCardSkeleton';
+import { SeeMore } from '@/components/SeeMore';
 
 export function WhoToFollow() {
   const users = getUsers();
@@ -22,7 +23,7 @@ export function WhoToFollow() {
         <UsersList users={users} />
       </Suspense>
 
-      <span>See more</span>
+      <SeeMore href='/home/connect-people' />
     </article>
   );
 }
