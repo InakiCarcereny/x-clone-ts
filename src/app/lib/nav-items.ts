@@ -19,24 +19,24 @@ export const NAV_ITEMS = [
     label: 'Home',
     icon: Home({ width: 28, height: 28 }),
     href: '/home',
-    altern: HomeFill({}),
+    altern: HomeFill({ width: 28, height: 28 }),
   },
   {
     label: 'Explore',
     icon: Search({ width: 28, height: 28 }),
     href: '/home/explore',
-    altern: SearchFill({}),
+    altern: SearchFill({ width: 28, height: 28 }),
   },
   {
     label: 'Bookmarks',
     icon: BookMark({ width: 28, height: 28 }),
     href: '/home/bookmarks',
-    altern: BookMarkFill({}),
+    altern: BookMarkFill({ width: 28, height: 28 }),
   },
   {
     label: 'Profile',
     icon: User({ width: 28, height: 28 }),
     href: '/home/profile',
-    altern: UserFill({}),
+    altern: UserFill({ width: 28, height: 28 }),
   },
 ] as const;
