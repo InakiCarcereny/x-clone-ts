@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
+
+import { GetVerifiedButton } from '@/components/GetVerifiedButton';
 import { Balloon } from '@/icons/Balloon';
 import { Calendar } from '@/icons/Calendar';
 import { LeftArrow } from '@/icons/LeftArrow';
-import { Verified } from '@/icons/Verified';
 import Link from 'next/link';
 
 export default function Profile() {
@@ -26,7 +28,7 @@ export default function Profile() {
       <img
         src='/assets/me.jpeg'
         alt='me'
-        className='rounded-full w-36 h-36 border-2 border-black absolute top-64 left-8'
+        className='rounded-full w-36 h-36 border-2 border-black absolute top-64 left-8 object-cover'
       />
 
       <button className='absolute top-84 right-8 rounded-full text-white font-semibold border border-cyan-500 px-4 py-2 bg-transparent cursor-pointer'>
@@ -35,14 +37,10 @@ export default function Profile() {
 
       <div className='flex flex-col gap-4 w-full px-4 py-2 mt-24'>
         <div className='flex flex-col'>
-          <div className='flex items-center gap-6'>
+          <div className='flex items-center gap-4'>
             <h2 className='text-white text-2xl font-semibold'>Inaki</h2>
-            <button className='rounded-full text-white font-semibold border border-cyan-500 px-2 py-1 bg-transparent cursor-pointer flex items-center gap-x-2 text-sm'>
-              <span>
-                <Verified className='text-black w-5 h-5' />
-              </span>
-              Get Verified
-            </button>
+
+            <GetVerifiedButton />
           </div>
           <small className='text-[#71767B] text-base'>@InakiDev</small>
         </div>

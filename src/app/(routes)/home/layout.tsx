@@ -3,6 +3,7 @@ import { Explorer } from '@/components/Explorer';
 import { Find } from '@/components/Find';
 import { PostModal } from '@/components/PostModal';
 import { HomeHeaderLayout } from '@/components/HomeHeaderLayout';
+import { GetVerifiedModal } from '@/components/GetVerifiedModal';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -20,6 +21,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </div>
 
       <PostModal />
+      <GetVerifiedModal />
     </div>
   );
 }
