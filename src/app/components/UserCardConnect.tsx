@@ -1,5 +1,6 @@
 import { User } from '@/types/users';
 import Image from 'next/image';
+import { Button } from '@/components/Button';
 
 type UserCardConnectProps = Pick<
   User,
@@ -36,9 +37,17 @@ export function UserCardConnect({
         </div>
       </div>
 
-      <button className='bg-white text-black font-semibold text-sm px-4 py-2 rounded-full cursor-pointer'>
-        Follow
-      </button>
+      <Button
+        label='Follow'
+        textSize='text-sm'
+        bgColor='bg-white'
+        textColor='text-black'
+        borderRadius='rounded-full'
+        fontWeight='font-semibold'
+        paddingX='px-4'
+        paddingY='py-2'
+        cursor='cursor-pointer'
+      />
     </li>
   );
 }

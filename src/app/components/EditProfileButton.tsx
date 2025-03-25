@@ -1,16 +1,26 @@
 'use client';
 
 import { useModalStore } from '@/store/modal-store';
+import { Button } from '@/components/Button';
 
 export function EditProfileButton() {
   const { openModal } = useModalStore();
 
   return (
-    <button
-      onClick={() => openModal('edit-profile')}
-      className='absolute top-84 right-8 rounded-full text-white font-semibold border border-cyan-500 px-4 py-2 bg-transparent cursor-pointer'
-    >
-      Edit profile
-    </button>
+    <Button
+      label='Edit profile'
+      textSize='text-base'
+      bgColor='bg-transparent'
+      textColor='text-white'
+      borderRadius='rounded-full'
+      borderSize='border'
+      borderColor='border-cyan-500'
+      paddingX='px-4'
+      paddingY='py-2'
+      fontWeight='font-semibold'
+      handleClick={() => openModal('edit-profile')}
+      cursor='cursor-pointer'
+      className='absolute top-84 right-8'
+    />
   );
 }
