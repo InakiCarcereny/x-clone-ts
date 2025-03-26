@@ -2,6 +2,8 @@
 
 import { Cross } from '@/icons/Cross';
 import { useModalStore } from '@/store/modal-store';
+import { Form } from '@/components/global/Form';
+import { z } from 'zod';
 
 export function EditProfileModal() {
   const { isOpen, type, closeModal } = useModalStore();
@@ -29,6 +31,19 @@ export function EditProfileModal() {
                 Save
               </button>
             </header>
+
+            <Form
+              schema={z.object({
+                name: z.string().min(2),
+              })}
+              fields={[
+                {
+                  placeholder: 'Name',
+                  type: 'text',
+                  name: 'name',
+                },
+              ]}
+            />
           </div>
         </div>
       )}
