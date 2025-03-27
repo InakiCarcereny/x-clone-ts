@@ -24,7 +24,9 @@ export default function Profile() {
         </Link>
 
         <div className='flex flex-col'>
-          <h2 className='text-white text-2xl font-semibold'>Inaki</h2>
+          <h2 className='text-white text-2xl font-semibold'>
+            {userProfile.name}
+          </h2>
           <small className='text-[#71767B] text-sm'>200 posts</small>
         </div>
       </header>

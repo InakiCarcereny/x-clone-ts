@@ -4,7 +4,7 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { createContext, use, useEffect, useState } from 'react';
 
 interface UserProfileContextType {
-  userProfile: UserProfile | null;
+  userProfile: UserProfile;
   setData: (data: UserProfile) => void;
 }
 
