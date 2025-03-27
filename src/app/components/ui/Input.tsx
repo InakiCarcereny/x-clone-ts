@@ -24,7 +24,7 @@ export function Input<T extends Record<string, string>>({
           <input
             {...field}
             type={type}
-            className='px-4 py-4 rounded-[4px] border-zinc-200 border w-full text-white text-sm placeholder:text-zinc-300 placeholder:text-sm'
+            className='px-4 py-4 rounded-[4px] border-white/20 border w-full text-white text-sm placeholder:text-white/40 placeholder:text-sm focus:outline-none'
             placeholder={placeholder}
           />
         )}
