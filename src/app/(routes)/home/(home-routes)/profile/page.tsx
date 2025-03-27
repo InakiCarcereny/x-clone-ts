@@ -1,13 +1,18 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 
 import { EditProfileButton } from '@/components/EditProfileButton';
 import { GetVerifiedButton } from '@/components/GetVerifiedButton';
+import { useUserProfile } from '@/context/user-profile';
 import { Balloon } from '@/icons/Balloon';
 import { Calendar } from '@/icons/Calendar';
 import { LeftArrow } from '@/icons/LeftArrow';
 import Link from 'next/link';
 
 export default function Profile() {
+  const { userProfile } = useUserProfile();
+
   return (
     <div className='flex flex-col relative'>
       <header className='flex items-center gap-x-6 px-4 py-2 w-full'>
@@ -37,7 +42,9 @@ export default function Profile() {
       <div className='flex flex-col gap-4 w-full px-4 py-2 mt-24'>
         <div className='flex flex-col'>
           <div className='flex items-center gap-4'>
-            <h2 className='text-white text-2xl font-semibold'>Inaki</h2>
+            <h2 className='text-white text-2xl font-semibold'>
+              {userProfile?.name}
+            </h2>
 
             <GetVerifiedButton />
           </div>
