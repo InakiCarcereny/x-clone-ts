@@ -3,7 +3,8 @@
 import { Cross } from '@/icons/Cross';
 import { useModalStore } from '@/store/modal-store';
 import { Form } from '@/components/global/Form';
-import { z } from 'zod';
+import editProfileSchema from '@/schemas/edit-profile';
+import { EDIT_PROFILE_INPUTS } from '@/lib/edit-profile-inputs';
 
 export function EditProfileModal() {
   const { isOpen, type, closeModal } = useModalStore();
@@ -26,24 +27,9 @@ export function EditProfileModal() {
                   Edit Profile
                 </h2>
               </div>
-
-              <button className='text-black font-semibold bg-white px-4 py-2 rounded-full cursor-pointer'>
-                Save
-              </button>
             </header>
 
-            <Form
-              schema={z.object({
-                name: z.string().min(2),
-              })}
-              fields={[
-                {
-                  placeholder: 'Name',
-                  type: 'text',
-                  name: 'name',
-                },
-              ]}
-            />
+            <Form schema={editProfileSchema} fields={EDIT_PROFILE_INPUTS} />
           </div>
         </div>
       )}
