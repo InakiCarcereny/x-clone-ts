@@ -1,19 +1,17 @@
-'use client';
-
 /* eslint-disable @next/next/no-img-element */
-
 import { EditProfileButton } from '@/components/EditProfileButton';
 import { GetVerifiedButton } from '@/components/GetVerifiedButton';
-import { useUserProfile } from '@/context/user-profile';
 import { Balloon } from '@/icons/Balloon';
 import { Calendar } from '@/icons/Calendar';
-import { Clip } from '@/icons/Clip';
 import { LeftArrow } from '@/icons/LeftArrow';
-import { Location } from '@/icons/Location';
 import Link from 'next/link';
 
-export default function Profile() {
-  const { userProfile } = useUserProfile();
+export default async function UserProfile({
+  params,
+}: {
+  params: Promise<{ userId: string }>;
+}) {
+  const { userId } = await params;
 
   return (
     <div className='flex flex-col relative'>
@@ -26,9 +24,7 @@ export default function Profile() {
         </Link>
 
         <div className='flex flex-col'>
-          <h2 className='text-white text-2xl font-semibold'>
-            {userProfile.name}
-          </h2>
+          <h2 className='text-white text-2xl font-semibold'>{userId}</h2>
           <small className='text-[#71767B] text-sm'>200 posts</small>
         </div>
       </header>
@@ -44,41 +40,22 @@ export default function Profile() {
       <EditProfileButton />
 
       <div className='flex flex-col gap-4 w-full px-4 py-2 mt-24'>
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-col'>
-            <div className='flex items-center gap-4'>
-              <h2 className='text-white text-2xl font-semibold'>
-                {userProfile?.name}
-              </h2>
+        <div className='flex flex-col'>
+          <div className='flex items-center gap-4'>
+            <h2 className='text-white text-2xl font-semibold'>{userId}</h2>
 
-              <GetVerifiedButton />
-            </div>
-            <small className='text-[#71767B] text-base'>@InakiDev</small>
+            <GetVerifiedButton />
           </div>
-
-          <p className='text-white text-sm font-semibold'>{userProfile.bio}</p>
+          <small className='text-[#71767B] text-base'>@InakiDev</small>
         </div>
 
         <div className='flex items-center gap-4 w-full'>
-          <span className='flex items-center gap-x-1 text-[#71767B] text-xs'>
-            <Location />
-            {userProfile.location}
-          </span>
-
-          <Link
-            className='flex items-center gap-x-1 text-[#1d9bf0] text-xs hover:underline hover:underline-offset-1'
-            href={userProfile.website}
-          >
-            <Clip />
-            {userProfile.website}
-          </Link>
-
-          <span className='flex items-center gap-x-1 text-[#71767B] text-xs'>
+          <span className='flex items-center gap-x-2 text-[#71767B] text-sm'>
             <Balloon />
             Born june 30, 2005
           </span>
 
-          <span className='flex items-center gap-x-1 text-[#71767B] text-xs'>
+          <span className='flex items-center gap-x-2 text-[#71767B] text-sm'>
             <Calendar />
             Joined November 2020
           </span>
