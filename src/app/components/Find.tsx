@@ -15,7 +15,7 @@ export function Find() {
       </div>
 
       <article className='rounded-xl border border-white/40 w-full h-[350px] px-4 py-4'>
-        <h3 className='text-white text-xl'>Whats Happening</h3>
+        <h3 className='text-white text-xl font-semibold'>Whats Happening</h3>
       </article>
 
       <WhoToFollow />
