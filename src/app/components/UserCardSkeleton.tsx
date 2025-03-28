@@ -1,6 +1,6 @@
 export function UserCardSkeleton() {
   return (
-    <li className='flex items-center justify-between w-full animate-pulse'>
+    <li className='flex items-center justify-between w-full animate-pulse px-4 py-2'>
       <div className='flex items-center gap-x-2 w-full'>
         <div className='w-10 h-10 bg-gray-300 rounded-full px-2 py-2'></div>
 
@@ -10,7 +10,7 @@ export function UserCardSkeleton() {
         </div>
       </div>
 
-      <button className='w-24 h-9 bg-gray-300 animate-pulse px-4 py-2 rounded-full'></button>
+      <button className='w-24 h-9 bg-gray-300 animate-pulse px-4 pb-2 rounded-full'></button>
     </li>
   );
 }
