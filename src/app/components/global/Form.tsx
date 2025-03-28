@@ -50,33 +50,32 @@ export function Form<TSchema extends ZodSchema>({
   };
 
   return (
-    <form
-      className='flex flex-col gap-y-4 px-4'
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      {fields.map((field) => (
-        <Input
-          key={field.name}
-          control={control}
-          name={field.name}
-          type={field.type}
-          placeholder={field.placeholder}
-          error={errors[field.name] as FieldError | undefined}
-        />
-      ))}
+    <form className='flex flex-col gap-y-4' onSubmit={handleSubmit(onSubmit)}>
+      <div className='flex flex-col gap-y-4 px-4'>
+        {fields.map((field) => (
+          <Input
+            key={field.name}
+            control={control}
+            name={field.name}
+            type={field.type}
+            placeholder={field.placeholder}
+            error={errors[field.name] as FieldError | undefined}
+          />
+        ))}
 
-      <Button
-        label='Save'
-        textSize='text-sm'
-        bgColor='bg-white'
-        textColor='text-black'
-        borderRadius='rounded-full'
-        paddingX='px-4'
-        paddingY='py-2'
-        fontWeight='font-semibold'
-        hoverBgColor='hover:bg-white/90'
-        cursor='cursor-pointer'
-      />
+        <Button
+          label='Save'
+          textSize='text-sm'
+          bgColor='bg-white'
+          textColor='text-black'
+          borderRadius='rounded-full'
+          paddingX='px-4'
+          paddingY='py-2'
+          fontWeight='font-semibold'
+          hoverBgColor='hover:bg-white/90'
+          cursor='cursor-pointer'
+        />
+      </div>
     </form>
   );
 }
