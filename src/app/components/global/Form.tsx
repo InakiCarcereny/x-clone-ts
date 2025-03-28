@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/Button';
 import { useUserProfile } from '@/context/user-profile';
 import { useModalStore } from '@/store/modal-store';
+import { usePathname } from 'next/navigation';
+import { toast } from 'sonner';
 
 interface FieldProps<TSchema extends ZodSchema> {
   name: Path<TypeOf<TSchema>>;
@@ -21,6 +23,8 @@ export function Form<TSchema extends ZodSchema>({
   schema,
   fields,
 }: FormProps<TSchema>) {
+  const pathname = usePathname();
+
   const { setData } = useUserProfile();
   const { closeModal } = useModalStore();
 
@@ -33,7 +37,15 @@ export function Form<TSchema extends ZodSchema>({
   });
 
   const onSubmit: SubmitHandler<TypeOf<TSchema>> = (data) => {
-    setData(data);
+    if (pathname === '/home/profile') {
+      setData(data);
+      toast(
+        <div className=' text-white font-semibold'>
+          Your profile has been updated!
+        </div>,
+      );
+    }
+
     closeModal();
   };
 
