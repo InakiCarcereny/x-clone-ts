@@ -13,6 +13,8 @@ type UserProfile = {
   bio: string;
   location: string;
   website: string;
+  avatar: string;
+  banner: string;
 };
 
 export const UserProfileContext = createContext<
@@ -39,6 +41,8 @@ export function UserProfileProvider({
     bio: '',
     location: '',
     website: '',
+    avatar: '',
+    banner: '',
   });
   const [userProfile, setUserProfile] = useState<UserProfile>({
     ...storedValue,
