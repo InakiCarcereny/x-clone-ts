@@ -5,6 +5,8 @@ const editProfileSchema = z.object({
   bio: z.string().optional(),
   location: z.string().optional(),
   website: z.string().optional(),
+  avatar: z.string().optional(),
+  banner: z.string().optional(),
 });
 
 export type EditProfile = z.infer<typeof editProfileSchema>;
