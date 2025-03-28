@@ -8,8 +8,10 @@ export function WhoToFollow() {
   const users = getUsers();
 
   return (
-    <article className='flex flex-col gap-6 rounded-xl border border-white/40 w-full h-[350px] px-4 py-4'>
-      <h3 className='text-white text-xl'>Who to Follow</h3>
+    <article className='flex flex-col gap-6 rounded-xl border border-white/40 w-full h-[350px]'>
+      <h3 className='text-white text-xl px-4 pt-4 font-semibold'>
+        Who to Follow
+      </h3>
 
       <Suspense
         fallback={
@@ -23,7 +25,9 @@ export function WhoToFollow() {
         <UsersList users={users} />
       </Suspense>
 
-      <SeeMore href='/home/connect-people' />
+      <div className='px-4 pb-2'>
+        <SeeMore href='/home/connect-people' />
+      </div>
     </article>
   );
 }
