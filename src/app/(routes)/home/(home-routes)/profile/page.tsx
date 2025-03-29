@@ -33,11 +33,15 @@ export default function Profile() {
         </div>
       </header>
 
-      <div className='w-full h-[250px] bg-white'></div>
+      <img
+        src={userProfile.banner}
+        alt={userProfile.name}
+        className='w-full h-[250px]'
+      />
 
       <img
-        src='/assets/me.jpeg'
-        alt='me'
+        src={userProfile.avatar}
+        alt={userProfile.name}
         className='rounded-full w-36 h-36 border-2 border-black absolute top-64 left-4 object-cover'
       />
 
