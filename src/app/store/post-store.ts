@@ -3,8 +3,10 @@ import { create } from 'zustand';
 
 interface PostStore {
   posts: Post[];
-  addPost: (post: Post) => void;
+  createPost: (post: Post) => void;
   deletePost: (post: Post) => void;
+  like: (post: Post) => void;
+  unlike: (post: Post) => void;
 }
 
 interface Post {
@@ -21,16 +23,29 @@ interface Comment {
   content: string;
   image?: string;
   likes: number;
+  repost: number;
 }
 
 export const usePostStore = create<PostStore>((set) => ({
   posts: [],
-  addPost: (post: Post) =>
+  createPost: (post: Post) =>
     set((state) => ({
       posts: [...state.posts, post],
     })),
   deletePost: (post: Post) =>
     set((state) => ({
       posts: state.posts.filter((p) => p.id !== post.id),
+    })),
+  like: (post: Post) =>
+    set((state) => ({
+      posts: state.posts.map((p) =>
+        p.id === post.id ? { ...p, likes: p.likes + 1 } : p,
+      ),
+    })),
+  unlike: (post: Post) =>
+    set((state) => ({
+      posts: state.posts.map((p) =>
+        p.id === post.id ? { ...p, likes: p.likes - 1 } : p,
+      ),
     })),
 }));
