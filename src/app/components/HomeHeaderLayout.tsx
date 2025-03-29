@@ -10,6 +10,9 @@ export function HomeHeaderLayout() {
   const hiddenHeader = isHeaderHidden(pathname, [
     '/home/connect-people',
     '/home/profile',
+    'home/emilys',
+    'home/michaelw',
+    'home/sophiab',
   ]);
 
   return (
