@@ -21,17 +21,17 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <VerifiedProvider>
         <UserProfileProvider>
-          <Toaster
-            position='bottom-right'
-            toastOptions={{
-              style: {
-                background: 'black',
-                boxShadow: '0 0 8px rgba(255, 255, 255, 0.5)',
-                border: 'none',
-              },
-            }}
-          />
           <body className={`${inter.className} ${inter.className} antialiased`}>
+            <Toaster
+              position='bottom-right'
+              toastOptions={{
+                style: {
+                  background: 'black',
+                  boxShadow: '0 0 8px rgba(255, 255, 255, 0.5)',
+                  border: 'none',
+                },
+              }}
+            />
             {children}
           </body>
         </UserProfileProvider>
