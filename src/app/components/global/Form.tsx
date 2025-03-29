@@ -7,6 +7,7 @@ import { useUserProfile } from '@/context/user-profile';
 import { useModalStore } from '@/store/modal-store';
 import { usePathname } from 'next/navigation';
 import { toast } from 'sonner';
+import { useEffect } from 'react';
 
 interface FieldProps<TSchema extends ZodSchema> {
   name: Path<TypeOf<TSchema>>;
@@ -25,12 +26,13 @@ export function Form<TSchema extends ZodSchema>({
 }: FormProps<TSchema>) {
   const pathname = usePathname();
 
-  const { setData } = useUserProfile();
+  const { setData, userProfile } = useUserProfile();
   const { closeModal } = useModalStore();
 
   const {
     handleSubmit,
     control,
+    setValue,
     formState: { errors },
   } = useForm<TypeOf<TSchema>>({
     resolver: zodResolver(schema),
@@ -48,6 +50,17 @@ export function Form<TSchema extends ZodSchema>({
 
     closeModal();
   };
+
+  useEffect(() => {
+    if (userProfile) {
+      setValue('name', userProfile.name);
+      setValue('bio', userProfile.bio);
+      setValue('location', userProfile.location);
+      setValue('website', userProfile.website);
+      // setValue('banner', userProfile.banner);
+      // setValue('avatar', userProfile.avatar);
+    }
+  }, [setValue, userProfile]);
 
   return (
     <form className='flex flex-col gap-y-4' onSubmit={handleSubmit(onSubmit)}>
