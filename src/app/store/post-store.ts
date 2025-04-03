@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { randomUUID, UUID } from 'crypto';
 import { create } from 'zustand';
 
 interface PostStore {
@@ -30,7 +30,16 @@ export const usePostStore = create<PostStore>((set) => ({
   posts: [],
   createPost: (post: Post) =>
     set((state) => ({
-      posts: [...state.posts, post],
+      posts: [
+        ...state.posts,
+        {
+          ...post,
+          id: randomUUID(),
+          likes: 0,
+          comments: [],
+          repost: 0,
+        },
+      ],
     })),
   deletePost: (post: Post) =>
     set((state) => ({
